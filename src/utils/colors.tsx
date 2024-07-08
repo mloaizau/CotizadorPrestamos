@@ -1,0 +1,7 @@
+export default {
+    PRYMARY_COLOR: "#4CC9F0",
+    PRYMARY_COLOR_DARK: "#4361EE",
+    GRAY_COLOR: "#CED3DC",
+    SNOW_COLOR: "#FCF7F8",
+    DANGER_COLOR: "#A31621"
+}

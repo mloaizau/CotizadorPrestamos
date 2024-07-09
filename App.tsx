@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import colors from './src/utils/colors';
 import { Forms } from './src/components/Forms';
@@ -12,6 +12,15 @@ function App(): React.JSX.Element {
   const [meses, setMeses] = useState(0);
   const [total, setTotal] = useState({pagoMensual:'', pagoTotal:''});
   const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    if ( (capital && interes && meses) !=0 ) {
+      calcular();
+    } else {
+      reset();
+    }
+  }, [capital, interes, meses])
+  
 
   const calcular = () => {
     reset();
